@@ -13,7 +13,6 @@ class GasEtaActivity : AppCompatActivity() {
 
         val componenteDeTelaController = ComponenteDeTelaController(this)
         componenteDeTelaController.iniciarBotoes()
-
     }
 
 

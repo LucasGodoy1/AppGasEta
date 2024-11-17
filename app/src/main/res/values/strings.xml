@@ -6,7 +6,6 @@
     <string name="txt_botao_calcular">CALCULAR</string>
     <string name="txt_botao_limpar">LIMPAR</string>
     <string name="txt_resultado">RESULTADO</string>
-    <string name="txt_curso_de_interesse">Curso de Interesse:</string>
     <string name="txt_etanol">R$ Etanol:</string>
     <string name="txt_gasolina">R$ Gasolina:</string>
 </resources>
