@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/androidTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="84dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/txt_gaseta_titulo"
+                android:textSize="25sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toTopOf="@+id/androidCaixa1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/androidCaixa1"
+                android:layout_width="337dp"
+                android:layout_height="52dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.269"
+                app:srcCompat="@drawable/caixadetexto" />
+
+            <ImageView
+                android:id="@+id/androidCaixa4"
+                android:layout_width="337dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa3"
+                app:srcCompat="@drawable/caixadetexto" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/idAndroidBtnFinalizar"
+                android:layout_width="250dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/botao_fundo_ciano"
+                android:text="@string/txt_botao_finalizar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/idAndroidBtnSal"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="@+id/idAndroidBtnLimp"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa4"
+                app:layout_constraintVertical_bias="0.491" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/idAndroidBtnSal"
+                android:layout_width="140dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/botao_fundo_ciano"
+                android:text="@string/txt_botao_salvar"
+                app:layout_constraintBottom_toTopOf="@+id/idAndroidBtnFinalizar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa4"
+                app:layout_constraintVertical_bias="0.368" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/idAndroidBtnLimp"
+                android:layout_width="140dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/botao_fundo_ciano"
+                android:text="@string/txt_botao_limpar"
+                app:layout_constraintBottom_toTopOf="@+id/idAndroidBtnFinalizar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa4"
+                app:layout_constraintVertical_bias="0.368" />
+
+            <ImageView
+                android:id="@+id/androidCaixa2"
+                android:layout_width="337dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa1"
+                app:srcCompat="@drawable/caixadetexto" />
+
+            <ImageView
+                android:id="@+id/androidCaixa3"
+                android:layout_width="337dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="36dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/androidCaixa2"
+                app:srcCompat="@drawable/caixadetexto" />
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.007"
+                app:srcCompat="@drawable/android" />
+
+            <ImageView
+                android:id="@+id/android2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/idAndroidBtnFinalizar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.974"
+                app:srcCompat="@drawable/android2" />
+
+            <EditText
+                android:id="@+id/idTxtGasolina"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="9dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:hint="@string/txt_gasolina"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/androidCaixa1"
+                app:layout_constraintEnd_toEndOf="@+id/androidCaixa1"
+                app:layout_constraintHorizontal_bias="0.125"
+                app:layout_constraintStart_toStartOf="@+id/androidCaixa1"
+                app:layout_constraintTop_toTopOf="@+id/androidCaixa1" />
+
+            <EditText
+                android:id="@+id/idTxtEtanol"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="9dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:hint="@string/txt_etanol"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/androidCaixa2"
+                app:layout_constraintEnd_toEndOf="@+id/androidCaixa2"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="@+id/androidCaixa2"
+                app:layout_constraintTop_toTopOf="@+id/androidCaixa2"
+                app:layout_constraintVertical_bias="0.52" />
+
+            <EditText
+                android:id="@+id/idAndroidCursoInt"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="9dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:hint="@string/txt_curso_de_interesse"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/androidCaixa3"
+                app:layout_constraintEnd_toEndOf="@+id/androidCaixa3"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="@+id/androidCaixa3"
+                app:layout_constraintTop_toTopOf="@+id/androidCaixa3" />
+
+            <EditText
+                android:id="@+id/idAndroidTel"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="9dp"
+                android:background="#00FFFFFF"
+                android:ems="10"
+                android:hint="@string/txt_resultado"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/androidCaixa4"
+                app:layout_constraintEnd_toEndOf="@+id/androidCaixa4"
+                app:layout_constraintHorizontal_bias="0.12"
+                app:layout_constraintStart_toStartOf="@+id/androidCaixa4"
+                app:layout_constraintTop_toTopOf="@+id/androidCaixa4" />
+
+            <Spinner
+                android:id="@+id/idSpinerCurso"
+                android:layout_width="300dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#000000"
+                tools:layout_editor_absoluteX="55dp"
+                tools:layout_editor_absoluteY="111dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
