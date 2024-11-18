@@ -34,7 +34,6 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
 
             if (validarCampo()) {
 
-                idBtnCalcular.setError(null)
 
                 val valorGas = idGasolina.text.toString().toDouble()
                 val valorEta = idEtanol.text.toString().toDouble()
@@ -44,6 +43,8 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
 
                 combustivel =
                     Combustivel(valorGas.toString(), valorEta.toString(), recomendacao)
+
+                idBtnSalvar.setEnabled(true)
             }
 
 
@@ -71,9 +72,6 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
 
                 gasEta.apply()
                 Toast.makeText(gasEtaActivity, "Salvo com Sucesso!", Toast.LENGTH_LONG).show()
-            }else{
-                idBtnCalcular.setError("")
-                Toast.makeText(gasEtaActivity, "* OBRIGATORIO CALCULAR", Toast.LENGTH_LONG).show()
             }
 
         })
