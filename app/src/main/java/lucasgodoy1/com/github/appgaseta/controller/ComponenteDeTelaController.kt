@@ -1,6 +1,7 @@
 package lucasgodoy1.com.github.appgaseta.controller
 
 import android.content.SharedPreferences
+import android.text.TextUtils
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -27,12 +28,22 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
     private fun calcular(){
         idBtnCalcular.setOnClickListener(View.OnClickListener{
 
-            val valorGas = idGasolina.text.toString().toDouble()
-            val valorEta = idEtanol.text.toString().toDouble()
+            if(idGasolina.text.isEmpty()){
+                idGasolina.setError("* CAMPO OBRIGATORIO")
+                idGasolina.requestFocus()
+            }else if (idEtanol.text.isEmpty()){
+                idEtanol.setError("* CAMPO OBRIGATORIO")
+                idEtanol.requestFocus()
+            }else{
+                val valorGas = idGasolina.text.toString().toDouble()
+                val valorEta = idEtanol.text.toString().toDouble()
 
-            val msg = UtilGasEta.calcularMelhorPreco(valorGas, valorEta)
+                val msg = UtilGasEta.calcularMelhorPreco(valorGas, valorEta)
+                idResultado.setText(msg.uppercase())
 
-            idResultado.setText(msg.uppercase())
+            }
+
+
         })
     }
 
