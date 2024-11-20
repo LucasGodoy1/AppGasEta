@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import lucasgodoy1.com.github.appgaseta.R
+import lucasgodoy1.com.github.appgaseta.repository.GasetaRepository
 
 class SplashActivity : AppCompatActivity() {
     val TIME_OUT_SPLASH = 300L
@@ -24,6 +25,9 @@ class SplashActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val gasetaRepository = GasetaRepository(this)
+        gasetaRepository.readableDatabase
 
         comutarTelaSplash()
 
