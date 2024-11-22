@@ -1,5 +1,6 @@
 package lucasgodoy1.com.github.appgaseta.controller
 
+import android.content.ContentValues
 import android.content.SharedPreferences
 import android.view.View
 import android.widget.EditText
@@ -8,11 +9,13 @@ import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import lucasgodoy1.com.github.appgaseta.R
 import lucasgodoy1.com.github.appgaseta.model.Combustivel
+import lucasgodoy1.com.github.appgaseta.repository.GasetaDatabase
 import lucasgodoy1.com.github.appgaseta.util.UtilGasEta
 import lucasgodoy1.com.github.appgaseta.view.GasEtaActivity
 import java.time.LocalDateTime
 
-class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
+class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) :
+    GasetaDatabase(gasEtaActivity) {
 
     private val idBtnFinalizar: AppCompatButton =
         gasEtaActivity.findViewById(R.id.idAndroidBtnFinalizar)
@@ -62,7 +65,7 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
 
     private fun salvar() {
         idBtnSalvar.setOnClickListener(View.OnClickListener {
-            if (validarCampo() && ::combustivel.isInitialized ) {
+            if (validarCampo() && ::combustivel.isInitialized) {
 
                 var gasEta = sharedPreferences.edit()
                 gasEta.putString("valor_gasolina", combustivel.precoGasolina)
@@ -72,6 +75,13 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) {
 
                 gasEta.apply()
                 Toast.makeText(gasEtaActivity, "Salvo com Sucesso!", Toast.LENGTH_LONG).show()
+
+                var content = ContentValues()
+                content.put("PRECO_GASOLINA", combustivel.precoGasolina)
+                content.put("PRECO_ETANOL", combustivel.precoEtanol)
+                content.put("RECOMENDACAO", combustivel.recomendacao.uppercase())
+
+                salavrObjetosData("Combustivel", content)
             }
 
         })

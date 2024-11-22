@@ -4,12 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import lucasgodoy1.com.github.appgaseta.R
-import lucasgodoy1.com.github.appgaseta.repository.GasetaRepository
+import lucasgodoy1.com.github.appgaseta.repository.GasetaDatabase
 
 class SplashActivity : AppCompatActivity() {
     val TIME_OUT_SPLASH = 300L
@@ -26,8 +27,11 @@ class SplashActivity : AppCompatActivity() {
             insets
         }
 
-        val gasetaRepository = GasetaRepository(this)
-        gasetaRepository.readableDatabase
+        val gasetaDatabase = GasetaDatabase(this)
+        gasetaDatabase.readableDatabase
+
+        var lista = gasetaDatabase.listarObjetosData()
+        lista.forEach { i -> Log.i("Sua Lista", i.toString()) }
 
         comutarTelaSplash()
 

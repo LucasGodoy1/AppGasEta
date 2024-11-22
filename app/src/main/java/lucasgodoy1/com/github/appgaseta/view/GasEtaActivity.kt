@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import lucasgodoy1.com.github.appgaseta.R
 import lucasgodoy1.com.github.appgaseta.controller.ComponenteDeTelaController
-import lucasgodoy1.com.github.appgaseta.repository.GasetaRepository
 
 class GasEtaActivity : AppCompatActivity() {
 
