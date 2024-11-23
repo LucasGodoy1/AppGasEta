@@ -2,6 +2,7 @@ package lucasgodoy1.com.github.appgaseta.controller
 
 import android.content.ContentValues
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
@@ -48,6 +49,7 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) :
                     Combustivel(valorGas.toString(), valorEta.toString(), recomendacao)
 
                 idBtnSalvar.setEnabled(true)
+                idBtnCalcular.setTextColor(Color.BLACK)
             }
 
 
@@ -60,6 +62,8 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) :
             idGasolina.setText("")
             idEtanol.setText("")
             idResultado.setText("RESULTADO")
+            idBtnSalvar.setEnabled(false)
+
         })
     }
 
@@ -77,6 +81,7 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) :
                 Toast.makeText(gasEtaActivity, "Salvo com Sucesso!", Toast.LENGTH_LONG).show()
 
                 var content = ContentValues()
+                content.put("id", combustivel.id)
                 content.put("PRECO_GASOLINA", combustivel.precoGasolina)
                 content.put("PRECO_ETANOL", combustivel.precoEtanol)
                 content.put("RECOMENDACAO", combustivel.recomendacao.uppercase())
@@ -107,6 +112,17 @@ class ComponenteDeTelaController(private val gasEtaActivity: GasEtaActivity) :
             preenchido = false
         }
         return preenchido
+
+    }
+
+    fun alterarObjeto(combustivel: Combustivel){
+
+        var content = ContentValues()
+        content.put("id", combustivel.id)
+        content.put("PRECO_GASOLINA", combustivel.precoGasolina)
+        content.put("PRECO_ETANOL", combustivel.precoEtanol)
+        content.put("RECOMENDACAO", combustivel.recomendacao.uppercase())
+        alterarObjetoData("Combustivel", content)
 
     }
 

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import lucasgodoy1.com.github.appgaseta.R
+import lucasgodoy1.com.github.appgaseta.controller.ComponenteDeTelaController
 import lucasgodoy1.com.github.appgaseta.repository.GasetaDatabase
 
 class SplashActivity : AppCompatActivity() {
@@ -20,18 +21,13 @@ class SplashActivity : AppCompatActivity() {
 
         enableEdgeToEdge()
 
-        setContentView(R.layout.activity_gaseta)
+        setContentView(R.layout.activity_splash)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val gasetaDatabase = GasetaDatabase(this)
-        gasetaDatabase.readableDatabase
-
-        var lista = gasetaDatabase.listarObjetosData()
-        lista.forEach { i -> Log.i("Sua Lista", i.toString()) }
 
         comutarTelaSplash()
 

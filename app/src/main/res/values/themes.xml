@@ -2,8 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AppGaseta" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="android:background">#E1F3FF</item>
     </style>
 
-    <style name="Theme.AppGaseta" parent="Base.Theme.AppGaseta" />
+    <style name="Theme.AppGaseta" parent="Base.Theme.AppGaseta"/>
 </resources>

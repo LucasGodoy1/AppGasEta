@@ -8,10 +8,10 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/gas_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppGaseta"
         tools:targetApi="31">
+
         <activity android:name=".view.GasEtaActivity"
             android:exported="false">
 

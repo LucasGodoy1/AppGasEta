@@ -53,4 +53,9 @@ open class GasetaDatabase(context: Context?) : SQLiteOpenHelper(context, DB_NAME
         return lista
     }
 
+    fun alterarObjetoData(nomeTabela: String, dados: ContentValues) {
+        val id = dados.getAsInteger("id") ?: throw IllegalArgumentException("ID não pode ser nulo")
+        db.update(nomeTabela, dados, "id=?", arrayOf(id.toString()))
+    }
+
 }
